@@ -7,5 +7,5 @@ client = Client()
 
 class ProfileViewTests(TestCase):
     def test_sholud_return_302_when_profile_is_call(self):
-        resp = client.get(reverse('profile'))
+        resp = client.get(reverse("profile"))
         assert resp.status_code == 302

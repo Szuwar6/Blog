@@ -1,8 +1,8 @@
-
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import generics
 from .serializers import ArticleSerializer
 from blog.models import Article
+
 
 class GetAllArticles(generics.ListAPIView):
     serializer_class = ArticleSerializer
@@ -24,10 +24,12 @@ class DestroyArticle(generics.DestroyAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Article
 
+
 class UpdateArticle(generics.UpdateAPIView):
     serializer_class = ArticleSerializer
     permission_classes = [IsAuthenticated]
     queryset = Article
+
 
 class RetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ArticleSerializer
